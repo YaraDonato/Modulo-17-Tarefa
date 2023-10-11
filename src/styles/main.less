@@ -11,15 +11,45 @@
 }
 
 body {
-    background-color: #f5f6fa;
+    background-color: #colors[corDeFundo];
 }
 
 li {
     list-style: none;
 }
 
+.container{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media @breakpointMobile {
+        max-width: 80%;
+
+        .product {
+            display: block;
+        }
+    
+        .product-item  {
+            margin-bottom: 32px;
+        }
+    }
+    @media @breakpointTablet {
+        max-width: 80%;
+
+        .container {
+            max-width: 80%;
+        }
+    
+        .product {
+            grid-template-columns: repeat(2, 48.5%);
+            column-gap: 3%;
+        }
+    }
+}
+
 header {
-    background-color: #182C61;
+    background-color: #colors[corCabecalho];
     position: sticky;
     top: 0;
     left: 0;
@@ -29,32 +59,6 @@ header {
         justify-content: space-between;
         align-items: center;
         padding: 16px 0;
-    }
-}
-
-.container{
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-
-    @media @breakpointMobile {
-        .products {
-            display: block;
-        }
-    
-        .product-item  {
-            margin-bottom: 32px;
-        }
-    }
-    @media @breakpointTablet {
-        .container {
-            max-width: 80%;
-        }
-    
-        .products {
-            grid-template-columns: repeat(2, 48.5%);
-            column-gap: 3%;
-        }
     }
 }
 
@@ -92,7 +96,7 @@ section {
     }
     &-button{
         display: block;
-        background-color: #44bd32;
+        background-color: #colors[buttonColor];
         color: #fff;
         text-align: center;
         padding: 8px 0;
@@ -101,7 +105,7 @@ section {
         text-decoration: none;
 
         &:hover{
-            background-color: #4cd137;
+            background-color: #colors[buttonColorHover];
         }
     }
 }
